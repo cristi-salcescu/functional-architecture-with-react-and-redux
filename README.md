@@ -1,4 +1,4 @@
-Functional Architecture with React and Redux - Source Code
+# Functional Architecture with React and Redux - Source Code
 
 [https://www.amazon.com/dp/B0846NRJYR/](https://www.amazon.com/dp/B0846NRJYR/)
 
