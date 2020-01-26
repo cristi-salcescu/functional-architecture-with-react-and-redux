@@ -1,12 +1,14 @@
 import axios from 'axios';
 
+const baseUrl = 'https://hacker-news.firebaseio.com/v0';
+
 function fetchTopStoriesIds(){
-    const url = `https://hacker-news.firebaseio.com/v0/topstories.json`;
+    const url = `${baseUrl}/topstories.json`;
     return axios.get(url).then(getData);
 }
   
 function fetchStory(id){
-    const url = `https://hacker-news.firebaseio.com/v0/item/${id}.json`;
+    const url = `${baseUrl}/item/${id}.json`;
     return axios.get(url).then(getData);
 }
 

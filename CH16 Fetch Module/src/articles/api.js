@@ -1,14 +1,16 @@
 import axios from 'axios';
 import {apiKey, getResults} from '../shared/api-tools';
 
+const baseUrl = 'https://api.nytimes.com/svc/mostpopular/v2/viewed';
+
 function fetchMostPopular(){
-    const url = `https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=${apiKey}`;
+    const url = `${baseUrl}/1.json?api-key=${apiKey}`;
     return axios(url)
             .then(getResults);
 }
 
 function requestMostPopular(){
-    const url = `https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=${apiKey}`;
+    const url = `${baseUrl}/1.json?api-key=${apiKey}`;
     return { url };
 }
 
