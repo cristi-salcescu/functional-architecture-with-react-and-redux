@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
-import withOnEnter from '../shared/withOnEnter';
+import connect from '../shared/connectWithOnLoad';
 import CategoryItem from './CategoryItem';
 import FetchStatus from '../fetch/FetchStatus';
 import {fetchBookCategories} from './operations';
@@ -29,7 +27,8 @@ function mapState({books}){
     }
 }
 
-export default compose(
-    withOnEnter(() => fetchBookCategories),
-    connect(mapState)
+export default connect(
+    mapState,
+    null,
+    fetchBookCategories
 )(Categories);

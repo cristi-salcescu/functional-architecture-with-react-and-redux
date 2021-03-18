@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
 import { fetchMoviesCriticsPicks } from './operations';
-import withOnEnter from '../shared/withOnEnter';
+import connect from '../shared/connectWithOnLoad';
 import FetchStatus from '../fetch/FetchStatus';
 import MovieReviewItem from './MovieReviewItem'
 
@@ -29,7 +27,8 @@ function mapState({movieReviews}){
     }
 }
 
-export default compose(
-    withOnEnter(() => fetchMoviesCriticsPicks),
-    connect(mapState)
+export default connect(
+    mapState,
+    null,
+    fetchMoviesCriticsPicks
 )(MovieReviews);

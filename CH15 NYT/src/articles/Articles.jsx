@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
 import { fetchMostPopularArticles } from './operations';
-import withOnEnter from '../shared/withOnEnter';
+import connect from '../shared/connectWithOnLoad';
 import ArticleItem from './ArticleItem'
 
 function Articles({articles}){
@@ -27,7 +25,8 @@ function mapState({articles}){
     }
 }
 
-export default compose(
-    withOnEnter(() => fetchMostPopularArticles),
-    connect(mapState)
+export default connect(
+    mapState,
+    null,
+    fetchMostPopularArticles
 )(Articles);
